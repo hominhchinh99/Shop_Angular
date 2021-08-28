@@ -1,0 +1,152 @@
+<div class="alert alert-success" role="alert" *ngIf="success">
+    <strong>Cảm ơn bạn </strong>&nbsp;Đơn hàng của bạn đã được lưu lại
+</div>
+<ng-container *ngIf="!success">
+   
+    <div class="row col mb-2">
+        <div class="col-10">
+            <h3 class="mb-5 tect-center"><strong>Thanh toán</strong></h3>
+        </div>
+        <div class="col-2">
+            <button (click)="toCheckOut()" type="button" class="btn btn-light"><strong>&#8249;&#8249; Trở về giỏ hàng</strong></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <p><strong>Giỏ hàng của bạn</strong></p>
+            <div class="list-group mb-5">
+                <ng-container *ngFor="let line of shoppingCart">
+                    <div class="list-group-item flex-column align-items-center border-secondary">
+                        <div class="d-flex w-100 justify-content-between">
+                            <div class="mr-auto">
+                                <div class="product-img mr-4"><img src="{{ line.product.images[0] }}" alt="{{ line.product.model }} image"></div>
+                                <div class="product-info">
+                                    <small>{{ line.product.make }}</small><br>
+                                    <strong>{{ line.product.model }}</strong>
+                                </div>
+                            </div>
+                            <small class="details mr-4">{{ line.product.price | currency:'VND' }}<br></small>
+                            <small class="details quantity mr-3">x {{ line.quantity }}</small>
+                            <small class="details total">{{ calculatePrice(line.product.id) | currency:'VND' }}</small>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="list-group-item flex-column align-items-center border-secondary">
+                    <div class="d-flex w-100 justify-content-end">
+                        <small class="details mr-3">Vận chuyển</small>
+                        <small class="details total">{{ shippingPrice | currency:'VND' }}</small>
+                    </div>
+                </div>
+                <div class="list-group-item flex-column align-items-center border-secondary">
+                    <div class="d-flex w-100 justify-content-end">
+                        <small class="details mr-3">Tổng</small>
+                        <small class="details total">{{ calculateTotal() | currency:'VND' }}</small>
+                    </div>
+                </div>
+            </div>
+            <p><strong>Địa chỉ giao hàng</strong></p>
+            <!-- Not updating -->
+            <div class="list-group mb-5" *ngIf="!updating">
+                <div class="list-group-item flex-column align-items-center border-secondary">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="delivery-header"><strong>Địa chỉ giao</strong></div>
+                        <button type="button" class="btn btn-link" (click)="editAddress()">Chỉnh sửa</button>
+                    </div>
+                </div>
+                <div class="list-group-item border-secondary">
+                    <h5>Tên</h5>
+                    <div>{{ user.firstName }} {{ user.lastName }}</div>
+                    <h5>Địa chỉ</h5>
+                    <div>{{ user.address }}</div>
+                    <h5>Số điện thoại</h5>
+                    <div>{{ user.phone }}</div>
+                </div>
+            </div>
+            <!-- Updating Form -->
+            <div class="list-group mb-5" *ngIf="updating">
+                <div class="list-group-item checkout-form border-secondary">
+                    <!-- Form start -->
+                    <form [formGroup]="formCheckout" (ngSubmit)="updateAddress()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">Họ <span>*</span></label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Linus" formControlName="firstName" required>
+                                <div *ngIf="firstName.touched">
+                                    <small class="form-text" [hidden]="!firstName.errors?.required"><span>Không được để trống</span></small>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Tên <span>*</span></label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Torvalds" formControlName="lastName" required>
+                                <div *ngIf="lastName.touched">
+                                    <small class="form-text" [hidden]="!lastName.errors?.required"><span>Không được để trống</span></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Địa chỉ <span>*</span></label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" formControlName="address" required>
+                            <div *ngIf="address.touched">
+                                <small class="form-text" [hidden]="!address.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại <span>*</span></label>
+                            <input type="number" class="form-control" id="phone" placeholder="456789123" formControlName="phone" required>
+                            <div *ngIf="phone.touched">
+                                <small class="form-text" [hidden]="!phone.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <button type="button" class="btn btn-block btn-primary" (click)="updating = !updating">Hủy</button>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <button type="submit" class="btn btn-block btn-primary" [disabled]="!formCheckout.valid">Cập nhập</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Form end -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 mb-5">
+            <div class="shipping mb-5">
+                <p><strong>Vận chuyển</strong></p>
+                <div class="list-group mb-5">
+                    <ng-container *ngFor="let shipping of shippingMethods; index as i">
+                        <div class="list-group-item flex-column align-items-center border-secondary">
+                            <div class="form-check d-flex w-100 justify-content-between">
+                                <input class="form-check-input" type="radio" name="shipping" id="shipping{{ shipping.id }}" value="{{ shipping.id }}" [(ngModel)]="shippingSelected" [checked]="true" (change)="getShippingPrice()">
+                                <label class="form-check-label ml-2" for="shipping{{ shipping.id }}">{{ shipping.name }}</label>
+                                <small>{{ shipping.price | currency:'VND' }}</small>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="payment mb-5">
+                <p><strong>Thanh toán</strong></p>
+                <div class="list-group mb-5">
+                    <ng-container *ngFor="let payment of paymentMethods">
+                        <div class="list-group-item border-secondary">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment" id="payment{{ payment.id }}" value="{{ payment.id }}" [(ngModel)]="paymentSelected">
+                                <label class="form-check-label ml-2" for="payment{{payment.id}}">{{ payment.name }}</label>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="list-group mb-3">
+                <div class="list-group-item flex-column align-items-center border-secondary">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div><strong>Tổng</strong></div>
+                        <div><strong>{{ calculateTotal() | currency:'VND' }}</strong></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-block btn-primary" [disabled]="updating" (click)="confirmOrder()">Xác nhận đặt hàng</button>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col alert-box alert alert-danger" role="alert" *ngIf="hasError">
+        <div><strong>Đăng nhập thất bại!!!</strong><br>Sai tên mật khẩu hoặc tài khoản !!!</div>
+    </div>
+    <div class="col alert-box alert alert-success" role="alert" *ngIf="success">
+        <div><strong>Đăng nhập thành công</strong></div>
+    </div>
+</div>
+<div class="row mb-5">
+    <div class="col login-box mt-5 mb-5">
+        <h2>Đăng nhập</h2>
+        <hr>
+        <form [formGroup]="formLogin" (ngSubmit)="loginUser()">
+            <div class="form-group mt-4">
+                <label for="inputEmail">Địa chỉ email</label>
+                <input type="email" class="form-control form-control-lg" id="inputEmail1" formControlName="email" required>
+                <div *ngIf="email.touched">
+                    <small class="form-text" [hidden]="!email.errors?.email"><span>Địa chỉ email không đúng</span></small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Mật khẩu</label>
+                <input type="password" class="form-control form-control-lg" id="inputPassword" formControlName="password" required>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block mt-4" [disabled]="!formLogin.valid">Đăng nhập</button>
+        </form>
+    </div>
+</div>

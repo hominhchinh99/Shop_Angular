@@ -1,0 +1,74 @@
+<div class="row mt-5 mb-5">
+    <div class="col-lg-10 offset-1 alert alert-success" role="alert" *ngIf="success">
+        <div><strong>Chúc mừng bạn!</strong> Tạo tài khoản thành công</div>
+        <div class="redirect-link"><a routerLink="/login">Nhấn vào đây để đăng nhập</a> Nếu trình duyệt không tự động chuyển hướng bạn.
+        </div>
+    </div>
+    <div class="col-lg-10 offset-1 alert-box alert alert-danger" role="alert" *ngIf="hasError">
+        <div><strong></strong>&nbsp; Email này đã được đăng kí trước đây.</div>
+    </div>
+    <div class="col col-lg-10 offset-lg-1 register-box mt-5 mb-5">
+        <h2>Đăng ký tài khoản</h2>
+        <hr>
+        <form [formGroup]="formRegister" (ngSubmit)="registerUser()">
+            <div class="form-row mt-4">
+                <div class="form-group col-md-6" >
+                    <label for="firstName">Họ<span>*</span></label>
+                    <input  type="text" class="form-control" id="firstName" placeholder="Nguyễn văn" formControlName="firstName" required>
+                    <div *ngIf="firstName.touched">
+                        <small class="form-text" [hidden]="!firstName.errors?.required"><span>Họ không được để trống.</span></small>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">Tên <span>*</span></label>
+                    <input type="text" class="form-control" id="lastName" placeholder="A" formControlName="lastName" required>
+                    <div *ngIf="lastName.touched">
+                        <small class="form-text" [hidden]="!lastName.errors?.required"><span>Tên không được để trống.</span></small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="abc@email.com" formControlName="email" required>
+                    <div *ngIf="email.touched">
+                        <small class="form-text" [hidden]="!email.errors?.required"><span>Emailkhông được để trống.</span></small>
+                        <small class="form-text" [hidden]="!email.errors?.email"><span>Vui lòng nhập một địa chỉ email hợp lệ</span></small>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Mật khẩu <span>*</span></label>
+                    <input type="password" class="form-control" id="password" placeholder="123456789" formControlName="password" required>
+                    <div *ngIf="password.touched">
+                        <small class="form-text" [hidden]="!password.errors?.required"><span>Mật khẩu không được để trống.</span></small>
+                        <small class="form-text" [hidden]="!password.errors?.minlength"><span>Mật khẩu phải dài ít nhất 8 ký tự.</span></small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ <span>*</span></label>
+                <input type="text" class="form-control" id="address" placeholder="273 An Dương Vương" formControlName="address" required>
+                <div *ngIf="address.touched">
+                    <small class="form-text" [hidden]="!address.errors?.required"><span>Địa chỉ không được để trống.</span></small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Số điện thoại <span>*</span></label>
+                    <input type="number" class="form-control" id="phone" placeholder="1234567890" formControlName="phone" required>
+                    <div *ngIf="phone.touched">
+                        <small class="form-text" [hidden]="!phone.errors?.required"><span>SĐT không được để trống.</span></small>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="birthdate">Ngày sinh <span>*</span></label>
+                    <input type="date" class="form-control" id="birthdate" placeholder="01/01/1999" formControlName="birthdate" required>
+                    <div *ngIf="birthdate.touched">
+                        <small class="form-text" [hidden]="!birthdate.errors?.required"><span>Ngày sinh không được để trống.</span></small>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!formRegister.valid" class="btn btn-lg btn-block btn-primary">Đăng ký</button>
+        </form>
+    </div>
+</div>

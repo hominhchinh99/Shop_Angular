@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-3 mb-5">
+        <p><strong>Xin chào, {{ user.firstName }}</strong></p>
+        <ul class="list-group">
+            <a [routerLink]="['/account', 1]" class="list-group-item list-group-item-action">Thông tin cá nhân</a>
+            <li class="list-group-item active">Đơn đặt hàng</li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <p><strong>Đơn đặt hàng</strong></p>
+        <div class="list-group mb-5">
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Ngày</th>
+                        <th scope="col">Sản Phẩm</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let order of orders">
+                        <tr>
+                            <th scope="row"><small>{{ order.id }}</small></th>
+                            <td><small>{{ order.date | date }}</small></td>
+                            <!-- <td>
+                                <div *ngFor="let product of order.orderProducts; index as i">
+                                    <small>{{ product.productId }}</small><br>
+                                    <small>{{ product.unitPrice | currency:'EUR' }} <span *ngIf="product.quantity > 1">x {{ product.quantity }}</span></small><br>
+                                    <small *ngIf="product.quantity > 1">{{ product.subTotal | currency:'EUR' }}</small>
+                                    <hr *ngIf="i !== order.orderProducts.length - 1">
+                                </div>
+                            </td> -->
+                            <td><small>{{ order.orderProducts.length }} sản phẩm</small></td>
+                            <td><small>{{ order.totalPrice | currency:'VNĐ' }}</small></td>
+                            <td><small>{{ order.state }}</small></td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

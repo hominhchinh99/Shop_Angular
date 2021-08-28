@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-lg-4 contacts pt-4">
+        <p><strong>Thông tin liên hệ</strong></p>
+        <div class="mb-5">
+            <div class="address mb-4">
+                <h4>Shop Computer</h4>
+                273 An Dương Vương<br>
+                <small>Việt Nam</small>
+            </div>
+            <div class="contacts-lines">
+                <div class="mb-1"><img src="assets/images/phone.svg" alt="Phone number">123-456-7890</div>
+                <div><img src="assets/images/email.svg" alt="Email address"><a href="mailto:6yl0l7kd9mq@temporary-mail.net">hello@email.com</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="alert alert-success mb-5" role="alert" *ngIf="success">
+            <strong>Tin nhắn đã được gửi </strong>&nbsp; Chúng tôi sẽ trả lời trong vài ngày tới.
+        </div>
+        <div class="col-lg-12 contacts-box mb-5" *ngIf="!success">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <hr>
+            <form [formGroup]="formContacts" (ngSubmit)="sendMessage()">
+                <div class="form-row mt-4">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">Họ <span>*</span></label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Nguyễn Văn" formControlName="firstName" required>
+                        <div *ngIf="firstName.touched">
+                            <small class="form-text" [hidden]="!firstName.errors?.required"><span>Không được để trống</span></small>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Tên <span>*</span></label>
+                        <input type="text" class="form-control" id="lastName" placeholder="A" formControlName="lastName" required>
+                        <div *ngIf="lastName.touched">
+                            <small class="form-text" [hidden]="!lastName.errors?.required"><span>Không được để trống</span></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="abc@email.com" formControlName="email" required>
+                        <div *ngIf="email.touched">
+                            <small class="form-text" [hidden]="!email.errors?.required"><span>Không được để trống</span></small>
+                            <small class="form-text" [hidden]="!email.errors?.email"><span>Sai định dạng email</span></small>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone" placeholder="1234567890" formControlName="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Chủ đề <span>*</span></label>
+                    <input type="text" class="form-control" id="subject" placeholder="Chủ đề" formControlName="subject" required>
+                    <div *ngIf="subject.touched">
+                        <small class="form-text" [hidden]="!subject.errors?.required"><span>Không được để trống</span></small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Lời nhắn <span>*</span></label>
+                    <textarea name="subject" id="subject" formControlName="message" placeholder="Tin nhắn của bạn" rows="4"></textarea>
+                    <div *ngIf="message.touched">
+                        <small class="form-text" [hidden]="!message.errors?.required"><span>Không được để trống</span></small>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!formContacts.valid" class="btn btn-lg btn-block btn-primary col-lg-6 offset-lg-6">Gửi</button>
+            </form>
+        </div>
+    </div>
+</div>

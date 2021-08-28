@@ -1,0 +1,539 @@
+{
+  "users": [
+    {
+      "firstName": "Carlos",
+      "lastName": "Silva",
+      "email": "email@email.com",
+      "password": "1",
+      "address": "Address 1",
+      "phone": 912345678,
+      "birthdate": "1970-12-25",
+      "shoppingCart": [
+        {
+          "productId": 7,
+          "quantity": 1
+        },
+        {
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "productId": 1,
+          "quantity": 2
+        }
+      ],
+      "orders": [
+        {
+          "orderId": 1
+        },
+        {
+          "orderId": 2
+        },
+        {
+          "orderId": 3
+        },
+        {
+          "orderId": 4
+        },
+        {
+          "orderId": 5
+        },
+        {
+          "orderId": 6
+        }
+      ],
+      "id": 1
+    },
+    {
+      "firstName": "Hồ Minh",
+      "lastName": "Chính",
+      "email": "hominhchinh99@gmail.com",
+      "password": "123456789",
+      "address": "LHP P4 Q5",
+      "phone": 382529133,
+      "birthdate": "1999-10-29",
+      "shoppingCart": [],
+      "orders": [],
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 4,
+      "name": "Laptop Asus ROG Strix G15",
+      "make": "Laptop Asus ROG Strix",
+      "model": "G512-IAL013T",
+      "price": 36000000,
+      "images": [
+        "assets/images/computers/altair/altair-01.jpg",
+        "assets/images/computers/altair/altair-02.jpg"
+      ],
+      "description": "Laptop ASUS Gaming ROG Strix G512-IAL013T là người thừa kế của phong cách tối giản, không hầm hố và nặng nề như trên những chiếc laptop gaming mà bạn thường thấy. Cụ thể nó có kích thước 360x275x24.9mm và trọng lượng cũng chỉ đạt 2.4 kg, không khác gì so với dòng máy phổ thông.",
+      "stock": 9,
+      "featured": false
+    },
+    {
+      "id": 2,
+      "categoryId": 3,
+      "name": "Laptop Acer Gaming Nitro 5",
+      "make": "Laptop Acer Gaming Nitro",
+      "model": "AN515-55-55E3",
+      "price": 72000000,
+      "images": [
+        "assets/images/computers/atlas/atlas-01.jpg",
+        "assets/images/computers/atlas/atlas-02.jpg"
+      ],
+      "description": "Nitro 5 2020 AN515-55-5923 tích hợp những “vũ khí” mới nhất. Bao gồm CPU Intel® Core™ i5 10300H, VGA NVIDIA® GeForce GTX 1650Ti cho hiệu năng xử lý mạnh mẽ. Nitro 5 2020 AN515-55-5923 sở hữu thiết kế ấn tượng với hai màu đen-đỏ chủ đạo. Bề mặt được thiết kế hầm hố và góc cạnh hơn. Thể hiện phong cách hiếu chiến đặc trưng của dòng Nitro. Viền màn hình siêu mỏng 6.3mm cho cảm giác không gian thoáng đãng hơn trước.",
+      "stock": 6,
+      "featured": false
+    },
+    {
+      "id": 3,
+      "categoryId": 2,
+      "name": "Laptop Dell Latitude 3510 70233210",
+      "make": "Laptop Dell Latitude",
+      "model": "Latitude 3510 70233210",
+      "price": 495000000,
+      "images": [
+        "assets/images/computers/bendix/bendix-01.jpg",
+        "assets/images/computers/bendix/bendix-02.jpg",
+        "assets/images/computers/bendix/bendix-03.jpg"
+      ],
+      "description": "Được thiết kế đơn giản, sang trọng với vỏ ngoài được phủ sơn màu đen và các cạnh bên được vát mỏng, các đường nét góc cạnh được bo tròn gọn gàng, mặt lưng trơn in nổi logo Dell. Ngoài tính thẩm mĩ, Dell Latitude 3510 cũng đảm bảo độ bền bỉ, chắc chắn và tính di động để có thể đồng hành với bạn trong mọi hành trình lâu dài.  Khung máy chắc chắn, bền bỉ giúp bảo vệ linh kiện tối đa trước tác động bên ngoài.",
+      "stock": 9,
+      "featured": true
+    },
+    {
+      "id": 4,
+      "categoryId": 3,
+      "name": "Laptop MSI GF63 Thin 10SCXR 020VN",
+      "make": "Laptop MSI GF63 Thin",
+      "model": "Thin 10SCXR 020VN",
+      "price": 800000000,
+      "images": [
+        "assets/images/computers/cdc/cdc-01.jpg",
+        "assets/images/computers/cdc/cdc-02.jpg",
+        "assets/images/computers/cdc/cdc-03.jpg",
+        "assets/images/computers/cdc/cdc-04.jpg"
+      ],
+      "description": "Laptop MSI GF63 Thin 9SCSR 1057VN với mặt trên vỏ kim loại xước và thiết kế bàn phím liền kề, măt dưới với khe thông gió hình chữ X ẩn vô cùng độc đáo.BỘ XỬ LÝ HEXA-CORE INTEL THẾ HỆ 9 MỚI NHẤT CPU 6 NHÂN THẾ HỆ 9 MỚI NHẤT",
+      "stock": 8,
+      "featured": false
+    },
+    {
+      "id": 5,
+      "categoryId": 3,
+      "name": "ELaptop LG Gram 2020 17Z90N-V.AH75A5",
+      "make": "ELaptop LG Gram 2020",
+      "model": "17Z90N-V.AH75A5",
+      "price": 250000000,
+      "images": [
+        "assets/images/computers/eai/tr-01.jpg",
+        "assets/images/computers/eai/tr-02.jpg",
+        "assets/images/computers/eai/tr-03.jpg",
+        "assets/images/computers/eai/tr-04.jpg"
+      ],
+      "description": "LG gram 17, không chỉ với trọng lượng siêu nhẹ 1350g mà màn hình lớn tới 17', bắt đầu một kỷ nguyên mới với khả năng di chuyển dễ dàng thật ấn tượng. Giờ đây bạn không cần phải cân nhắc từ bỏ tính cơ động để có được màn hình lớn, mà bạn có thể mang theo LG gram 17 đến bất cứ nơi nào.",
+      "stock": 7,
+      "featured": true
+    },
+    {
+      "id": 6,
+      "categoryId": 4,
+      "name": "Laptop Asus TUF Gaming F15 FX506LU-HN138T",
+      "make": "Laptop Asus TUF Gaming",
+      "model": "F15 FX506LU-HN138",
+      "price": 0,
+      "images": [
+        "assets/images/computers/eai/2000-01.jpg",
+        "assets/images/computers/eai/2000-02.jpg",
+        "assets/images/computers/eai/2000-03.jpg",
+        "assets/images/computers/eai/2000-04.jpg"
+      ],
+      "description": "Laptop gaming là một trong những dòng sản phẩm được thiết kế dành riêng cho các game thủ. Nếu bạn đang tìm kiếm một chiếc laptop gaming được thiết kế nhỏ gọn, phần cứng ấn tượng và vô cùng mạnh mẽ thì laptop ASUS TUF F15 FX506LU-HN138T sẽ là sản phẩm bạn không nên bỏ qua. Hãy cùng khám phá những điều đặc biệt bên trong mẫu laptop cực chất nhà Asus này nhé.",
+      "stock": 0,
+      "featured": false
+    },
+    {
+      "id": 7,
+      "categoryId": 3,
+      "name": "Laptop Asus ROG Zephyrus G14 GA401IU-HA171T",
+      "make": "Laptop Asus ROG Zephyrus",
+      "model": "G14 GA401IU-HA171T",
+      "price": 290000000,
+      "images": [
+        "assets/images/computers/elliot/elliot-01.jpg",
+        "assets/images/computers/elliot/elliot-02.jpg",
+        "assets/images/computers/elliot/elliot-03.jpg"
+      ],
+      "description": "Zephyrus G14 GA401IU-HA171T định nghĩa lại khả năng chơi game với dòng Laptop siêu mỏng. Thiết kế mới giúp giải phóng tiềm năng thực sự của AMD® Ryzen™ 7 và GPU GeForce® GTX 1660 Ti . Kết hợp với màn hình 2K chuẩn mực PANTONE®.",
+      "stock": 1,
+      "featured": true
+    },
+    {
+      "id": 8,
+      "categoryId": 3,
+      "name": "Laptop HP Pavilion 14-dv0041TU (2H3L0PA)",
+      "make": "Laptop HP Pavilion",
+      "model": "14-dv0041TU (2H3L0PA)",
+      "price": 0,
+      "images": [
+        "assets/images/computers/endim/endim-01.jpg",
+        "assets/images/computers/endim/endim-02.jpg",
+        "assets/images/computers/endim/endim-03.jpg",
+        "assets/images/computers/endim/endim-04.jpg"
+      ],
+      "description": "Về hiệu năng, laptop được trang bị một bộ vi xử lý Intel Core i3 Tiger Lake thế hệ 11 tân tiến nhất, cho hiệu năng khá ổn định, xử lí mượt mà những thao tác hằng ngày trên các ứng dụng như Word, PowerPoint, xem phim, lướt web,... Với tốc độ xung nhịp được cải thiện đáng kể so với phiên bản tiền nhiệm, con chip này có xung nhịp trung bình là 3.00 GHz và tối đa 4.1 GHz khi chạy những tác vụ nặng.Kết hợp với RAM 4GB DDR4 tốc độ Bus 3200 MHz giúp laptop có thể xử lí mượt đồng thời nhiều ứng dụng. Hỗ trợ RAM tối đa 16 GB để đa nhiệm trơn tru hơn.",
+      "stock": 0,
+      "featured": false
+    },
+    {
+      "id": 9,
+      "categoryId": 1,
+      "name": "Laptop Asus ExpertBook B9450FA-BM0324T",
+      "make": "Laptop Asus ExpertBook",
+      "model": "B9450FA-BM0324T",
+      "price": 0,
+      "images": [
+        "assets/images/computers/harwell/decatron-01.jpg",
+        "assets/images/computers/harwell/decatron-02.jpg",
+        "assets/images/computers/harwell/decatron-03.jpg",
+        "assets/images/computers/harwell/decatron-04.jpg"
+      ],
+      "description": "Với trọng lượng 0.995kg  nhờ khung máy bằng hợp kim lithium-magiê nhưng cứng hơn 38% với khả năng chống chọi va đập hàng ngày khi di chuyển.Viền siêu mỏng đặt vừa màn hình 14 inch vào trong khung máy dành cho dòng 13 inch, giúp thiết bị cực kỳ nhỏ gọn.  Bạn có thể dễ dàng để laptop vào túi xách, balo của bạn mọi lúc để có thể làm việc cả trong và ngoài văn phòng.                      ",
+      "stock": 0,
+      "featured": false
+    },
+    {
+      "id": 10,
+      "categoryId": 4,
+      "name": "Laptop MSI GL75 Leopard 10SDR 495VN",
+      "make": "Laptop MSI GL75 Leopard",
+      "model": "10SDR 495VN",
+      "price": 790000000,
+      "images": [
+        "assets/images/computers/cray/cray-01.jpg",
+        "assets/images/computers/cray/cray-02.jpg",
+        "assets/images/computers/cray/cray-03.jpg",
+        "assets/images/computers/cray/cray-04.jpg"
+      ],
+      "description": "Trải qua vô vàn các cuộc chinh phạt trong nhiều tựa game AAA cùng với thời gian hoạt động không ngừng nghỉ, cuối cùng, MSI GL Leopard Series vẫn thật sự xứng đáng là một huyền thoại trong làng máy tính Laptop chơi game. Nó không những sở hữu một thiết kế ấn tượng, độc đáo và nổi bật mà nó còn mang trong mình một cấu hình tràn đầy sức mạnh cùng với một năng lượng cực kỳ bền bỉ. Chính vì vậy mà Laptop Gaming MSI GL Leopard Series vẫn đang được tiếp tục ra đời cho đến thời điểm hiện nay. Vậy Laptop Gaming MSI GL Leopard Series 2020 năm nay có những điều gì đặc biệt ? Ngay bây giờ các bạn hãy cùng An Phát Computer tìm hiểu về dòng sản phẩm mới này nhé.",
+      "stock": 5,
+      "featured": false
+    },
+    {
+      "id": 11,
+      "categoryId": 4,
+      "name": "Laptop Acer Gaming Aspire 7 A715-41G-R150",
+      "make": "Laptop Acer Gaming Aspire 7",
+      "model": "A715-41G-R150",
+      "price": 0,
+      "images": [
+        "assets/images/computers/hdr/hdr-01.jpg",
+        "assets/images/computers/hdr/hdr-02.jpg"
+      ],
+      "description": "huộc dòng laptop chơi game giá rẻ đến từ Acer nhưng vẫn sở hữu cấu hình mạnh mẽ, thiết kế tối giản hiện đại và ẩn chứa nhiều bất ngờ thú vị.Máy có thiết kế  kết cấu cứng cáp, bản lề cho góc mở hoàn toàn tới 180 độ. Đặc biệt, với trọng lượng chỉ 2,1kg, rất nhẹ đối với một chiếc laptop gaming, bạn có thể dễ dàng luôn mang theo đến mọi nơi.      ",
+      "stock": 0,
+      "featured": false
+    },
+    {
+      "id": 12,
+      "categoryId": 3,
+      "name": "Laptop Acer Nitro 5 AMD AN515-44-R9JM",
+      "make": "Laptop Acer Nitro 5 AMD",
+      "model": "AN515-44-R9JM",
+      "price": 3000000000,
+      "images": [
+        "assets/images/computers/ibm/729-01.jpg",
+        "assets/images/computers/ibm/729-02.jpg",
+        "assets/images/computers/ibm/729-03.jpg",
+        "assets/images/computers/ibm/729-04.jpg"
+      ],
+      "description": "Dòng laptop gaming giá rẻ Nitro 5 của Acer đã được nâng cấp với diện mạo hoàn toàn mới. Cùng sức mạnh của bộ vi xử lý Intel thế hệ thứ 10, Acer Nitro 5 AN515 55 sẽ mang tới trải nghiệm chơi game trọn vẹn cho bạn trong tầm giá hấp dẫn.Để có được sức mạnh cho những trận chiến game đỉnh cao, Acer Nitro 5 AN515 55 cần những “vũ khí” thực sự mạnh mẽ. Phiên bản Acer Nitro 5 AN515 55 5923 trong bài trang bị bộ vi xử lý Intel Core i5 10300H, con chip thuộc dòng Intel thế hệ thứ 10 với 4 nhân 8 luồng và tốc độ tối đa lên tới 4.50 GHz. Bên cạnh đó bạn còn có 8GB RAM và 512GB SSD, cho khả năng tải game cực nhanh, chơi game mượt mà. Card đồ họa rời NVIDIA GeForce GTX 1650 Ti với kiến trúc Turing tiên tiến cùng khả năng tương thích cao khi chơi game sẽ mang đến những hiệu ứng đồ họa mãn nhãn cùng tốc độ khung hình ổn định trong suốt quá trình chơi.",
+      "stock": 6,
+      "featured": false
+    },
+    {
+      "id": 13,
+      "categoryId": 3,
+      "name": "Laptop Acer Gaming Nitro 5 AN515-43-R4VJ",
+      "make": "Laptop Acer Gaming Nitro",
+      "model": "AN515-43-R4VJ",
+      "price": 320000000,
+      "images": [
+        "assets/images/computers/ibm/1130-01.jpg",
+        "assets/images/computers/ibm/1130-02.jpg",
+        "assets/images/computers/ibm/1130-03.jpg",
+        "assets/images/computers/ibm/1130-04.jpg"
+      ],
+      "description": "Nếu như các bạn là Fan trung thành dòng laptop gaming của nhà Acer thì chắc chắn sẽ không thể bỏ qua Laptop Acer Nitro AN515-43- R4VJ NH.Q6ZSV.004 - Một trong những dòng gaming laptop hội tụ đầy đủ yếu tố ngon, bổ, rẻ.chúng ta nhận ra ngay đây là một chiếc laptop gaming với những đường nét mạnh mẽ và tông màu đen – đỏ chủ đạo. Bên cạnh việc kiểu dáng “ngầu” đẹp mắt, Nitro 5 2019 cũng đi theo ngôn ngữ thiết kế hiện đại, không quá “hầm hố” như nhiều laptop gaming khác. ",
+      "stock": 9,
+      "featured": true
+    },
+    {
+      "id": 14,
+      "categoryId": 2,
+      "name": "Laptop HP Envy 13-ba1028TU 2K0B2PA",
+      "make": "Laptop HP Envy",
+      "model": "13-ba1028TU 2K0B2PA",
+      "price": 200000000,
+      "images": [
+        "assets/images/computers/ibm/1401-01.jpg",
+        "assets/images/computers/ibm/1401-02.jpg",
+        "assets/images/computers/ibm/1401-03.jpg"
+      ],
+      "description": "Envy ngoài là một giống táo được trồng tại Newzeland rất ngon thì đây còn được coi là một dòng laptop thuộc thương hiệu HP có cấu trúc chắc chắn, nhỏ gọn, với thiết kế sang trọng và hiệu năng tuyệt vời. Vậy với mức giá hơn 20 triệu đồng, một cái tên tiêu biểu của nhà HP mang tên HP Envy 13-ba1028TU 2K0B2PA sẽ làm được điều gì.",
+      "stock": 5,
+      "featured": false
+    },
+    {
+      "id": 15,
+      "categoryId": 3,
+      "name": "Laptop HP Pavilion 14-dv0041TU (2H3L0PA)",
+      "make": "aptop HP Pavilion",
+      "model": "14-dv0041TU (2H3L0PA)",
+      "price": 200000000,
+      "images": [
+        "assets/images/computers/ibm/2401-01.jpg",
+        "assets/images/computers/ibm/2401-02.jpg",
+        "assets/images/computers/ibm/2401-03.jpg",
+        "assets/images/computers/ibm/2401-04.jpg"
+      ],
+      "description": "Ưu điểm đầu tiên mà bạn có thể nhìn thấy ở chiếc HP PAVILION 14-DV0041TU này là thiết kế sang trọng và lịch lãm. Nắp trên của màn hình đã được thiết kế trơn, từ chất liệu hợp kim màu đen bạc nguyên khối mang cảm giác thoải mái khi sử dụng, cầm nắm.Dù chỉ là mới nhìn lướt qua, tớ đã bị siêu phẩm này thu hút hoàn toàn. Màu đen xám là tông màu chủ đạo của máy, với thiết kế mỏng – nhẹ và sang trọng, đây là sản phẩm cực kì phù hợp với các khách hàng có yêu cầu cao về sự tinh tế, đặc biệt là các vị đại diện doanh nghiệp, các doanh nhân hoặc giáo viên, văn phòng…",
+      "stock": 3,
+      "featured": false
+    },
+    {
+      "id": 16,
+      "categoryId": 3,
+      "name": "Laptop Dell Inspiron N7306A P125G002N7306A",
+      "make": "Laptop Dell Inspiron",
+      "model": "N7306A P125G002N7306A",
+      "price": 1000000000,
+      "images": [
+        "assets/images/computers/ibm/360-01.jpg",
+        "assets/images/computers/ibm/360-02.jpg",
+        "assets/images/computers/ibm/360-03.jpg",
+        "assets/images/computers/ibm/360-04.jpg"
+      ],
+      "description": "Trải qua rất nhiều quá trình nghiên cứu và phát triển, cuối cùng, Laptop Dell vẫn xứng đáng là một trong những máy tính xách tay thương hiệu Mỹ hàng đầu thế giới. Nó không những mang đến cho các bạn những chiếc Laptop với nhiều cấu hình lý tưởng và phù hợp mà nó còn mang đến cho các bạn những chiếc máy tính Laptop cực kỳ bền bỉ, cực kỳ ấn tượng và cực kỳ đẳng cấp.Nổi bật nhất, tuyệt đẹp nhất và đẳng cấp nhất trong số những dòng máy tính Laptop Dell, chính là XPS Series và đặc biệt hơn cả, chính là Laptop Dell XPS 2 in 1. Một trong những dòng Máy tính xách tay Laptop Dell – Đẳng Cấp Doanh Nhân với cấu hình cực mạnh cùng tính năng xoay gập cảm ứng đa điểm hiện đại.",
+      "stock": 9,
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "ASUS"
+    },
+    {
+      "id": 2,
+      "name": "DELL"
+    },
+    {
+      "id": 3,
+      "name": "MSI"
+    },
+    {
+      "id": 4,
+      "name": "LG"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "clientId": "1",
+      "date": "2021-05-10T10:08:43.519Z",
+      "orderProducts": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "unitPrice": 360,
+          "subTotal": 360
+        },
+        {
+          "productId": 2,
+          "quantity": 1,
+          "unitPrice": 7200,
+          "subTotal": 7200
+        }
+      ],
+      "paymentId": 1,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 7560
+    },
+    {
+      "id": 2,
+      "clientId": "1",
+      "date": "2021-05-10T10:19:13.442Z",
+      "orderProducts": [
+        {
+          "productId": 13,
+          "quantity": 2,
+          "unitPrice": 32000,
+          "subTotal": 64000
+        }
+      ],
+      "paymentId": 1,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 64000
+    },
+    {
+      "id": 3,
+      "clientId": "1",
+      "date": "2021-05-10T12:42:34.847Z",
+      "orderProducts": [
+        {
+          "productId": 5,
+          "quantity": 1,
+          "unitPrice": 25000,
+          "subTotal": 25000
+        },
+        {
+          "productId": 10,
+          "quantity": 1,
+          "unitPrice": 7900000,
+          "subTotal": 7900000
+        },
+        {
+          "productId": 12,
+          "quantity": 1,
+          "unitPrice": 300000,
+          "subTotal": 300000
+        }
+      ],
+      "paymentId": 2,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 8225000
+    },
+    {
+      "id": 4,
+      "clientId": "1",
+      "date": "2021-05-10T18:45:00.101Z",
+      "orderProducts": [
+        {
+          "productId": 5,
+          "quantity": 1,
+          "unitPrice": 25000,
+          "subTotal": 25000
+        }
+      ],
+      "paymentId": 1,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 25000
+    },
+    {
+      "id": 5,
+      "clientId": "1",
+      "date": "2021-05-10T10:32:54.868Z",
+      "orderProducts": [
+        {
+          "productId": 2,
+          "quantity": 1,
+          "unitPrice": 72000000,
+          "subTotal": 72000000
+        },
+        {
+          "productId": 3,
+          "quantity": 7,
+          "unitPrice": 495000000,
+          "subTotal": 3465000000
+        },
+        {
+          "productId": 4,
+          "quantity": 8,
+          "unitPrice": 800000000,
+          "subTotal": 6400000000
+        },
+        {
+          "productId": 5,
+          "quantity": 8,
+          "unitPrice": 250000000,
+          "subTotal": 2000000000
+        },
+        {
+          "productId": 10,
+          "quantity": 1,
+          "unitPrice": 790000000,
+          "subTotal": 790000000
+        },
+        {
+          "productId": 12,
+          "quantity": 1,
+          "unitPrice": 3000000000,
+          "subTotal": 3000000000
+        },
+        {
+          "productId": 14,
+          "quantity": 1,
+          "unitPrice": 200000000,
+          "subTotal": 200000000
+        },
+        {
+          "productId": 16,
+          "quantity": 1,
+          "unitPrice": 1000000000,
+          "subTotal": 1000000000
+        }
+      ],
+      "paymentId": 3,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 16927000000
+    },
+    {
+      "id": 6,
+      "clientId": "1",
+      "date": "2021-05-10T16:06:46.337Z",
+      "orderProducts": [
+        {
+          "productId": 7,
+          "quantity": 1,
+          "unitPrice": 290000000,
+          "subTotal": 290000000
+        }
+      ],
+      "paymentId": 1,
+      "shippingId": 3,
+      "state": "Đang giao",
+      "totalPrice": 290000000
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": 1,
+      "name": "Thẻ tín dụng"
+    },
+    {
+      "id": 2,
+      "name": "PayPal"
+    },
+    {
+      "id": 3,
+      "name": "Thanh toán khi giao hàng"
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": 1,
+      "name": "Vận chuyển bình thường",
+      "price": 10000
+    },
+    {
+      "id": 2,
+      "name": "Vận chuyển nhanh",
+      "price": 15000
+    },
+    {
+      "id": 3,
+      "name": "Vận chuyển hỏa tốc",
+      "price": 30000
+    }
+  ],
+  "messages": []
+}

@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-3 mb-5">
+        <p><strong>Xin chào, {{ user.firstName }}</strong></p>
+        <ul class="list-group">
+            <li class="list-group-item active">Thông tin cá nhân</li>
+            <a [routerLink]="['/orders', user.id]" class="list-group-item list-group-item-action">Đơn đặt hàng</a>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <p><strong>Thông tin cá nhân</strong></p>
+        <div class="alert alert-success" role="alert" *ngIf="success">
+            <strong>Lưu</strong>&nbsp; 
+        </div>
+        <div class="list-group mb-5" *ngIf="!updating">
+            <div class="list-group-item">
+                <h5>Tên</h5>
+                <div>{{ user.firstName }} {{ user.lastName }}</div>
+                <h5>Địa chỉ</h5>
+                <div>{{ user.address }}</div>             
+                <h5>Liên Hệ</h5>
+                <div>{{ user.phone }}</div>
+                <h5>Email</h5>
+                <div>{{ user.email }}</div>
+            </div>
+            <div class="list-group-item">
+                <button type="button" class="btn btn-link" (click)="editAddress()">Chỉnh sửa</button>
+            </div>
+        </div>
+        <div class="list-group mb-5" *ngIf="updating">
+            <div class="list-group-item account-form">
+                <form [formGroup]="formAccount" (ngSubmit)="updateUser()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">Họ <span>*</span></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Nguyễn văn" formControlName="firstName" required>
+                            <div *ngIf="firstName.touched">
+                                <small class="form-text" [hidden]="!firstName.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Tên <span>*</span></label>
+                            <input type="text" class="form-control" id="lastName" placeholder="A" formControlName="lastName" required>
+                            <div *ngIf="lastName.touched">
+                                <small class="form-text" [hidden]="!lastName.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email <span>*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="abc@email.com" formControlName="email" required>
+                            <div *ngIf="email.touched">
+                                <small class="form-text" [hidden]="!email.errors?.required"><span>Không được để trống</span></small>
+                                <small class="form-text" [hidden]="!email.errors?.email"><span>Sai định dạng email</span></small>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="password">Mật khẩu <span>*</span></label>
+                            <input type="password" class="form-control" id="password" placeholder="123456789" formControlName="password" required>
+                            <div *ngIf="password.touched">
+                                <small class="form-text" [hidden]="!password.errors?.required"><span>Không được để trống</span></small>
+                                <small class="form-text" [hidden]="!password.errors?.minlength"><span>Mật khẩu phải dài 8 ký tự</span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ <span>*</span></label>
+                        <input type="text" class="form-control" id="address" placeholder="273 An Dương Vương" formControlName="address" required>
+                        <div *ngIf="address.touched">
+                            <small class="form-text" [hidden]="!address.errors?.required"><span>Không được để trống</span></small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="phone">Số điện thoại<span>*</span></label>
+                            <input type="number" class="form-control" id="phone" placeholder="1234567890" formControlName="phone" required>
+                            <div *ngIf="phone.touched">
+                                <small class="form-text" [hidden]="!phone.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="birthdate">Ngày sinh <span>*</span></label>
+                            <input type="date" class="form-control" id="birthdate" placeholder="01/01/1999" formControlName="birthdate" required>
+                            <div *ngIf="birthdate.touched">
+                                <small class="form-text" [hidden]="!birthdate.errors?.required"><span>Không được để trống</span></small>
+                            </div>
+                        </div>
+                    </div>                  
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button type="button" class="btn btn-block btn-light" (click)="updating = !updating">Hủy</button>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <button type="submit" class="btn btn-block btn-primary" [disabled]="!formAccount.valid">Cập nhật</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

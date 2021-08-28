@@ -1,0 +1,21 @@
+<div class="row mb-5 mt-5">
+    <div class="col-lg-10 offset-lg-1">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-8 col-md-8">
+                    <input type="text" class="form-control " id="filter" name="filter" placeholder="Tìm sản phẩm" [(ngModel)]="filter" (input)="search()">
+                </div>
+                <div class="form-group col-4 col-md-2">
+                    <select class="custom-select" id="field" name="field" [(ngModel)]="field" (change)="search()">
+                        <option value="all">Tất cả</option>
+                        <option value="make">Hãng</option>
+                        <option value="model">Kiểu</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="clear()">Tạo lại</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

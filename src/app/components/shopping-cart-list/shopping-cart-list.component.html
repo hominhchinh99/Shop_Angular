@@ -1,0 +1,54 @@
+<h3 class="mb-5 text-center"><strong>Giỏ hàng của bạn</strong></h3>
+<div class="row" *ngIf="shoppingCart.length === 0">
+    <div class="col alert alert-danger" role="alert">
+        Chưa có sản phẩm trong giỏ hàng!!!<br>
+        <small><a routerLink="/store">Tiếp tục mua sắm</a></small>
+    </div>
+</div>
+<ng-container *ngIf="shoppingCart.length > 0">
+    <div class="row mb-5" style="border-bottom: solid 1px rgba(0, 0, 0, 0.322);">
+        <div class="col-12 col-md-7"><strong>Sản phẩm</strong></div>
+        <div class="col-6 col-md-2"><strong>Số lượng</strong></div>
+        <div class="col-6 col-md-3 price"><strong>Giá</strong></div>
+    </div>
+    <ng-container *ngFor="let line of shoppingCart">
+        <div class="row mb-5">
+            <div class="col-12 col-md-1 delete pt-4 pb-4">
+                <div class="delete-btn" (click)="deleteFromCart(line.product.id)">
+                    <img src="assets/images/times.svg" style="margin: 0; padding: 0;" alt="">
+                </div>
+            </div>
+            <div class="col-4 col-md-2">
+                <img src="{{ line.product.images[0] }}" alt="{{ line.product.name }}">
+            </div>
+            <div class="col-8 col-md-4 description">
+                <h6>{{ line.product.make }}</h6>
+                <h5><a [routerLink]="['/product', line.product.id]">{{ line.product.model }}</a></h5>
+                <small>{{ line.product.description }}</small>
+            </div>
+            <div class="col-6 col-md-3 pt-4 quantity">
+                <div class="add-quantity"></div>
+                <input type="number" class="form-control" id="quantity" value="{{ line.quantity }}" min="1" max="{{ line.product.stock }}" (change)="updateQuantity(line.quantity, line.product.id)" [(ngModel)]="line.quantity">
+                <small class="mt-5">Giá sản phẩm: {{ line.product.price | currency:'VND' }}</small>
+                <div class="remove-quantity"></div>
+            </div>
+            <div class="col-6 col-md-2 price">
+                {{ calculatePrice(line.product.id) | currency:'VND' }}
+            </div>          
+        </div>
+        <hr style="border: rgba(0, 0, 0, 0.322) 1px solid;">
+    </ng-container>
+    <div class="row pt-5 mb-5">
+        <div class="col-6 col-md-3 offset-md-7">
+            <strong>Tổng</strong>
+        </div>
+        <div class="col-6 col-md-2 price">
+            {{ calculateTotal() | currency:'VND' }}
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col col-md-5 offset-md-7">
+            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="toCheckOut()">Tiến hành thanh toán</button>
+        </div>
+    </div>
+</ng-container>
